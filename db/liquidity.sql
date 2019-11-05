@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 5.7.27, for Linux (x86_64)
 --
--- Host: localhost    Database: liquidity
+-- Host: eu-cdbr-west-02.cleardb.net    Database: heroku_bdb391528fcf336
 -- ------------------------------------------------------
--- Server version	5.7.27-0ubuntu0.19.04.1
+-- Server version	5.6.44-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -28,7 +28,7 @@ CREATE TABLE `department` (
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`department_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `department` (
 
 LOCK TABLES `department` WRITE;
 /*!40000 ALTER TABLE `department` DISABLE KEYS */;
-INSERT INTO `department` VALUES (1,'IT','2019-10-29 05:51:05','2019-10-29 05:51:05');
+INSERT INTO `department` VALUES (1,'IT','2019-11-05 15:32:31','2019-11-05 15:32:31'),(2,'TESTING','2019-11-05 15:32:50','2019-11-05 15:32:50'),(21,'DEVLOPMENT','2019-11-05 15:48:48','2019-11-05 15:48:48');
 /*!40000 ALTER TABLE `department` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -72,7 +72,7 @@ CREATE TABLE `user` (
   KEY `fk_user_department_idx` (`department_id`),
   CONSTRAINT `fk_user_department` FOREIGN KEY (`department_id`) REFERENCES `department` (`department_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_user_user_role` FOREIGN KEY (`user_role_id`) REFERENCES `user_role` (`user_role_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4829 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -81,7 +81,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (4822,'ankit.kapsime1@gmail.com','d6124b9d34be470dd0387dff9170c825cf8934ed','ankit','kumar','kapsime',7406185795,1,2,'S57GX0EfysN6yy4E','2019-11-01 08:58:19','2020-11-01 07:00:00',0,NULL,NULL,'2019-10-31 20:44:54','2019-10-31 20:42:27'),(4824,'ankit.kapsime+1@gmail.com','d6124b9d34be470dd0387dff9170c825cf8934ed','ankit',NULL,'kumar',1234567890,1,2,'x5h73faXQm4n8cjO','2019-10-31 20:45:30','2020-10-31 07:00:00',0,NULL,NULL,'2019-10-31 20:45:30','2019-10-31 20:45:30'),(4825,'ankit.kapsime+2@gmail.com','d6124b9d34be470dd0387dff9170c825cf8934ed','ankit',NULL,'kumar',1234567890,1,2,'KEzXhVI7iLpckGl9','2019-10-31 20:45:40','2020-10-31 07:00:00',0,NULL,NULL,'2019-10-31 20:45:40','2019-10-31 20:45:40'),(4826,'ankit.kapsime+3@gmail.com','d6124b9d34be470dd0387dff9170c825cf8934ed','ankit',NULL,'kumar',1234567890,1,2,'t6fJ5nLq2EJnHkHM','2019-10-31 20:45:47','2020-10-31 07:00:00',0,NULL,NULL,'2019-10-31 20:45:47','2019-10-31 20:45:47'),(4828,'admin@liquidity.com','e6655ddafa91f3a5416e730403d42d6ca9ac08dc','admin',NULL,NULL,NULL,NULL,5,'alTbKHlmpaBajaqy','2019-11-01 08:57:06','2020-11-01 07:00:00',0,NULL,1,'2019-11-01 07:46:56','2019-11-01 07:46:56');
+INSERT INTO `user` VALUES (1,'admin@liquidity.com','e6655ddafa91f3a5416e730403d42d6ca9ac08dc','admin',NULL,NULL,NULL,NULL,1,'hcZpnAnCWqeLtYpA','2019-11-05 15:13:30','2020-11-05 08:00:00',0,NULL,1,'2019-11-05 15:13:30','2019-11-05 15:13:30'),(11,'ankit.kapsime@gmail.com','554d1860670dfd4f79cdaf10dbe5fad5d365b09e','Ankit','Kumar','Kapsime',8074956800,1,2,'JD7UI6hZl0d9UkIJ','2019-11-05 18:24:48','2020-11-05 08:00:00',0,NULL,NULL,'2019-11-05 18:24:33','2019-11-05 18:23:35');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,7 +98,7 @@ CREATE TABLE `user_role` (
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,7 +107,7 @@ CREATE TABLE `user_role` (
 
 LOCK TABLES `user_role` WRITE;
 /*!40000 ALTER TABLE `user_role` DISABLE KEYS */;
-INSERT INTO `user_role` VALUES (2,'USER','2019-10-29 06:09:01','2019-10-29 06:09:01'),(3,NULL,'2019-11-01 07:34:21','2019-11-01 07:34:21'),(4,NULL,'2019-11-01 07:37:18','2019-11-01 07:37:18'),(5,'ADMIN','2019-11-01 07:39:30','2019-11-01 07:39:30');
+INSERT INTO `user_role` VALUES (1,'ADMIN','2019-11-05 15:12:11','2019-11-05 15:12:11'),(2,'USER','2019-11-05 15:12:12','2019-11-05 15:12:12');
 /*!40000 ALTER TABLE `user_role` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -120,4 +120,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-01 11:49:51
+-- Dump completed on 2019-11-05 10:27:31
