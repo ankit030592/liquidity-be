@@ -32,6 +32,7 @@ var user_role = require('./routes/user_role.server.routes');
 var auth = require('./routes/auth.server.routes');
 
 
+
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 global.mongoskin = require('mongoskin');
@@ -42,6 +43,8 @@ var Sequelize = require('sequelize');
 var sessionStore = new MongoStore({
     url: process.env.MONGODB_URI
 });
+
+console.log(process.env.NODE_ENV);
 
 app.disable('etag');
 /*creating express session*/
