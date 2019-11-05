@@ -1,18 +1,6 @@
 module.exports = {
     environment: 'development',
     port: 3000,
-    db: {
-        database: 'liquidity',
-        host: 'localhost',
-        port: 3306,
-        user: 'liquidity',
-        password: 'liquidity'
-    },
-    auth: {
-        user: "kasbacks@gmail.com",
-        pass: "kasbacks@123"
-    },
-
     enc_key: 'jdjf9348ufjsdjfkrjf85dks',
     enc_options: {
         algorithm: 'aes256'

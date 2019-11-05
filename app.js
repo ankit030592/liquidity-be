@@ -15,8 +15,8 @@ var app = express();
 
 global.lib = require('./lib');
 global.messages = require('./messages')
+global.ADMIN_ROLE_ID = 1;
 global.USER_ROLE_ID = 2;
-global.ADMIN_ROLE_ID = 5;
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -40,10 +40,7 @@ var User = db.import('./models/user');
 var Sequelize = require('sequelize');
 
 var sessionStore = new MongoStore({
-    host: config.mongo.host,
-    port: config.mongo.port,
-    db: config.mongo.db,
-    url: config.mongo.url
+    url: process.env.MONGODB_URI
 });
 
 app.disable('etag');

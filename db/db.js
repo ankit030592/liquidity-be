@@ -1,8 +1,7 @@
 var config = require('config');   
 var Sequelize = require('sequelize');
-// require('sequelize-hierarchy')(Sequelize);
 
-var sequelize = new Sequelize('mysql://' + config.db.user +':' + config.db.password + '@' + config.db.host + ':' + config.db.port + '/' + config.db.database, {
+var sequelize = new Sequelize(process.env.CLEARDB_DATABASE_URL, {
   define: config.sequelize.options
 });
 
