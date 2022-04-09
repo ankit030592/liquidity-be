@@ -17,7 +17,7 @@
     "frameguard": "^3.1.0",
     "http-errors": "~1.6.3",
     "jade": "^1.11.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "mongoskin": "^2.1.0",
     "morgan": "~1.9.1",
     "mysql": "^2.17.1",
